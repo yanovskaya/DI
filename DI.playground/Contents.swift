@@ -4,8 +4,7 @@ import UIKit
 
 // Dependancy Injection
 
-//Dependency injection is a scary term for a very simple idea. Instead of creating the dependency internally
-
+// Вместо того, чтобы создавать зависимость внутри
 
 protocol Service1 {}
 class RealService1: Service1 {}
@@ -18,7 +17,7 @@ class Client1 {
     }
 }
 
-// an object can receive it from the outside.
+// Объект может получить ее снаружи.
 
 
 protocol Service {}
@@ -28,10 +27,19 @@ class Client {
     let service: Service
     
     init(service: Service) {
-        self.service = service
+        self.service = service // зависимости внутри нет, объект получит ее снаружи при инициализации
     }
 }
 
-//The objects instantly become fully testable. A test double instead of a real service can be passed to the initializer to provide the expected responses or spy on what’s called on the Service.
+// Объекты сразу становятся полностью тестируемыми. Тестируемый дубль вместо реального сервиса может быть передан инициализатору, чтобы получать ожидаемые респонсы или шпионить за тем, что вызвано службой.
 
-// The creation of dependencies is separated from the client’s behavior.
+// Есть 3 типа DI:
+// setter-
+// interface-
+// constructor-based
+
+// Constructor = initializer-based injection
+// Это когда зависимость передается клиенту в инициализаторе и не изменяется в течение всего срока жизни клиента.
+// Однако самым большим преимуществом такого типа может быть тот факт, что он делает очевидным очевидное нарушение принципа единой ответственности. Если объект принимает все свои зависимости в инициализаторе, а инициализатор имеет более трех параметров, это намек на то, что объект может выполнять несколько операций, а рефакторинг необходим.
+
+// Resource: https://medium.com/ios-os-x-development/dependency-injection-in-swift-a959c6eee0ab
