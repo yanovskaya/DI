@@ -62,6 +62,6 @@ class ClientDI {
 */
 /*:
 ### Источники:
-+ https://medium.com/ios-os-x-development/dependency-injection-in-swift-a959c6eee0ab
-+ https://learnappmaking.com/dependency-injection-swift/
++ <https://medium.com/ios-os-x-development/dependency-injection-in-swift-a959c6eee0ab>
++ <https://learnappmaking.com/dependency-injection-swift/>
 */
