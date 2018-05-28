@@ -39,7 +39,7 @@ class ClientDI {
  **Есть 3 типа DI:**
  
  * Setter-
- * Interface- (редко используется)
+ * Interface- 
  * Constructor-based (Initializer-based)
  
  ## **Initializer-based Injection**
